@@ -74,7 +74,7 @@ export default function ItemCatalog() {
         ].map(t => (
           <button key={t.key} onClick={() => { setTypeFilter(t.key); setCategory('All'); }}
             className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
-              typeFilter === t.key ? 'bg-blue-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'
+              typeFilter === t.key ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'
             }`}
           >
             {t.label} <span className={`ml-1 text-xs ${typeFilter === t.key ? 'opacity-80' : 'text-slate-400'}`}>({t.count})</span>
@@ -87,13 +87,13 @@ export default function ItemCatalog() {
         <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search items or vendor..."
-            className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-400 bg-white" />
+            className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 bg-white" />
         </div>
         <div className="flex gap-2 flex-wrap">
           {categories.map(cat => (
             <button key={cat} onClick={() => setCategory(cat)}
               className={`px-3 py-2 rounded-lg text-xs font-medium transition-all ${
-                category === cat ? 'bg-blue-500 text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-600 hover:border-blue-300'
+                category === cat ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-600 hover:border-indigo-300'
               }`}
             >{cat}</button>
           ))}
@@ -109,8 +109,8 @@ export default function ItemCatalog() {
           return (
             <Card3D key={item.id} className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" intensity={6}>
               <div className="flex items-start justify-between mb-3">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${available ? 'bg-blue-50' : 'bg-slate-100'}`}>
-                  <Icon className={`w-5 h-5 ${available ? 'text-blue-500' : 'text-slate-400'}`} />
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${available ? 'bg-indigo-50' : 'bg-slate-100'}`}>
+                  <Icon className={`w-5 h-5 ${available ? 'text-indigo-600' : 'text-slate-400'}`} />
                 </div>
                 <Badge variant={available ? 'success' : 'danger'}>
                   {available ? `${item.availableStock} left` : 'Out of stock'}
@@ -129,7 +129,7 @@ export default function ItemCatalog() {
                 <span className="text-xs text-slate-400">Total: {item.totalStock}</span>
                 <button onClick={() => available && setSelected(item)} disabled={!available}
                   className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all ${
-                    available ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                    available ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-100 active:scale-95' : 'bg-slate-100 text-slate-400 cursor-not-allowed'
                   }`}
                 >
                   {available ? 'Request' : 'Unavailable'}
@@ -170,17 +170,17 @@ export default function ItemCatalog() {
               <label className="block text-sm font-medium text-slate-700 mb-1.5">Quantity Required</label>
               <input type="number" min={1} max={selected.availableStock} value={qty}
                 onChange={e => setQty(Number(e.target.value))} required
-                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400" />
+                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1.5">Purpose / Project Description</label>
               <textarea value={purpose} onChange={e => setPurpose(e.target.value)} required rows={3}
                 placeholder="Briefly describe what you need this component for..."
-                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 resize-none" />
+                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none" />
             </div>
             <div className="flex gap-3 pt-2">
               <button type="button" onClick={() => setSelected(null)} className="flex-1 px-4 py-2.5 border border-slate-200 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">Cancel</button>
-              <button type="submit" className="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-colors">Submit Request</button>
+              <button type="submit" className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors shadow-md shadow-indigo-200 active:scale-98">Submit Request</button>
             </div>
           </form>
         ) : null}

@@ -25,7 +25,7 @@ export default function Sidebar() {
   return (
     <aside className="w-64 bg-slate-900 flex flex-col h-full fixed left-0 top-0 bottom-0 z-40">
       <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-700/50">
-        <div className="w-9 h-9 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg">
+        <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-900/50">
           <Cpu className="w-5 h-5 text-white" />
         </div>
         <div>
@@ -45,14 +45,14 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
                   isActive
-                    ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                    ? 'bg-indigo-600/25 text-indigo-300 border border-indigo-500/40'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800'
                 }`
               }
             >
               {({ isActive }) => (
                 <>
-                  <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-blue-400' : ''}`} />
+                  <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-indigo-400' : ''}`} />
                   {label}
                 </>
               )}

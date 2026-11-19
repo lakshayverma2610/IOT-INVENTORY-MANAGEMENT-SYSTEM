@@ -274,7 +274,7 @@ export default function StudentDashboard() {
                     setSelectedRequest(null);
                     navigate('/student/requests');
                   }}
-                  className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2.5 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1"
+                  className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl text-xs font-semibold transition-colors shadow-md shadow-indigo-200 flex items-center justify-center gap-1 cursor-pointer"
                 >
                   Open in My Requests <ExternalLink className="w-3.5 h-3.5" />
                 </button>

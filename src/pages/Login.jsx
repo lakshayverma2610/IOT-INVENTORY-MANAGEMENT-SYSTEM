@@ -157,7 +157,7 @@ export default function Login() {
               }}
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 role === 'student'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-indigo-600 text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -173,7 +173,7 @@ export default function Login() {
               }}
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 role === 'teacher'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-indigo-600 text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -305,7 +305,7 @@ export default function Login() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 py-2.5 text-xs text-white bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold transition-all shadow-lg shadow-blue-600/30 disabled:opacity-50 order-1 sm:order-2 cursor-pointer"
+                  className="flex-1 py-2.5 text-xs text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition-all shadow-lg shadow-indigo-600/30 disabled:opacity-50 order-1 sm:order-2 cursor-pointer"
                 >
                   {loading ? 'Activating...' : 'Activate & Enter Portal'}
                 </button>
@@ -323,7 +323,7 @@ export default function Login() {
                   value={identifier}
                   onChange={e => handleIdentifierChange(e.target.value)}
                   placeholder={role === 'student' ? 'Enter 7-digit URN (e.g. 2581008)' : 'puja.acharya@iilm.edu'}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
                 />
               </div>
 
@@ -335,7 +335,7 @@ export default function Login() {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Enter password"
-                    className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 pr-11 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                    className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 pr-11 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
                   />
                   <button
                     type="button"
@@ -348,15 +348,15 @@ export default function Login() {
 
                 {/* Helpful Credential Note */}
                 <div className="mt-2 text-[11px] text-slate-400 flex items-start gap-1.5 bg-slate-800/60 p-2.5 rounded-lg border border-slate-700/40">
-                  <Info className="w-3.5 h-3.5 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <Info className="w-3.5 h-3.5 text-indigo-400 mt-0.5 flex-shrink-0" />
                   <div>
                     {role === 'teacher' ? (
                       <span>
-                        Default passwords: <span className="text-blue-300 font-mono font-medium">Puja@IILM2025</span> (or Vardaan@IILM2025 / Ramesh@IILM2025)
+                        Default passwords: <span className="text-indigo-300 font-mono font-medium">Puja@IILM2025</span> (or Vardaan@IILM2025 / Ramesh@IILM2025)
                       </span>
                     ) : (
                       <span>
-                        Default password: <span className="text-blue-300 font-mono font-medium">Student@2581</span> or your 7-digit URN
+                        Default password: <span className="text-indigo-300 font-mono font-medium">Student@2581</span> or your 7-digit URN
                       </span>
                     )}
                   </div>
@@ -367,7 +367,7 @@ export default function Login() {
                 type="submit"
                 onClick={handleSignIn}
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-[0.99] text-white font-semibold py-3.5 rounded-xl transition-all duration-150 shadow-lg shadow-blue-500/25 disabled:opacity-50 text-sm mt-3 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 active:scale-[0.99] text-white font-semibold py-3.5 rounded-xl transition-all duration-150 shadow-lg shadow-indigo-600/30 disabled:opacity-50 text-sm mt-3 flex items-center justify-center gap-2 cursor-pointer"
               >
                 {loading ? 'Authenticating...' : (
                   <>

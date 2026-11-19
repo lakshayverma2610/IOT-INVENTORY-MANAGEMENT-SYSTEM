@@ -63,7 +63,7 @@ export default function RequestsPanel() {
             key={f}
             onClick={() => setFilter(f)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all capitalize ${
-              filter === f ? 'bg-blue-500 text-white' : 'bg-white border border-slate-200 text-slate-600 hover:border-blue-300'
+              filter === f ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-600 hover:border-indigo-300'
             }`}
           >
             {f} ({f === 'all' ? requests.length : requests.filter(r => r.status === f).length})

@@ -61,10 +61,10 @@ export default function Header({ title, subtitle }) {
               setShowPasswordModal(true);
               setStatus({ error: '', success: '', loading: false });
             }}
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg transition-colors font-medium"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs text-indigo-700 hover:text-indigo-900 bg-indigo-50/80 hover:bg-indigo-100 border border-indigo-200/70 px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-xs"
             title="Change Account Password"
           >
-            <KeyRound className="w-3.5 h-3.5" />
+            <KeyRound className="w-3.5 h-3.5 text-indigo-600" />
             <span>Change Password</span>
           </button>
 
@@ -167,7 +167,7 @@ export default function Header({ title, subtitle }) {
             <button
               type="submit"
               disabled={status.loading}
-              className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-colors disabled:opacity-50"
+              className="flex-1 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold transition-colors shadow-md shadow-indigo-200 disabled:opacity-50 cursor-pointer"
             >
               {status.loading ? 'Updating...' : 'Update Password'}
             </button>

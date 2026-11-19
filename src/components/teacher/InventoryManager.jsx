@@ -172,7 +172,7 @@ export default function InventoryManager() {
         {['non-consumable', 'consumable'].map(t => (
           <button key={t} onClick={() => { setTypeFilter(t); setSearch(''); }}
             className={`px-5 py-2 rounded-lg text-sm font-medium transition-all capitalize ${
-              typeFilter === t ? 'bg-blue-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'
+              typeFilter === t ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'
             }`}
           >
             {t === 'non-consumable' ? 'Non-Consumables' : 'Consumables'} ({items.filter(i=>i.type===t).length})
@@ -184,10 +184,10 @@ export default function InventoryManager() {
         <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by name, vendor, category..."
-            className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-400 bg-white" />
+            className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 bg-white" />
         </div>
         <button onClick={() => { setAddModal(true); setForm({...emptyItem, type: typeFilter}); }}
-          className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-colors shadow-sm">
+          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors shadow-md shadow-indigo-100 cursor-pointer">
           <Plus className="w-4 h-4" /> Add Item
         </button>
       </div>
